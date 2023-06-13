@@ -1,0 +1,51 @@
+form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 1rem;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 2rem;
+}
+
+.error-msg {
+  margin-top: -0.5rem;
+  color: red;
+  font-size: small;
+}
+
+form input {
+  margin: 0.4rem 0;
+  padding: 0.1rem 0.6rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+.btn {
+  margin-top: 1rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: rgb(72, 233, 72);
+  padding: 0.5rem;
+  width: 4rem;
+  color: white;
+  cursor: pointer;
+}
+
+form textarea {
+  padding: 0.1rem 0.6rem;
+  border-radius: 0.5rem;
+  margin-bottom: 4px;
+}
+
+.btn:hover {
+  background-color: green;
+}
+
+.edit-btn {
+  background-color: rgb(245, 114, 114);
+}
+
+.edit-btn:hover {
+  background-color: red;
+}
