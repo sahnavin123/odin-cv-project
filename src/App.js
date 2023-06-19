@@ -1,9 +1,5 @@
 import "./App.css";
 
-<<<<<<< HEAD
-function App() {
-  return <div className="App">{/* content will be added here */}</div>;
-=======
 import React, { Component } from "react";
 import GeneralInfo from "./components/GeneralInfo";
 import Education from "./components/Education";
@@ -134,7 +130,6 @@ class App extends Component {
       </div>
     );
   }
->>>>>>> 7862b69 (completed cv project)
 }
 
 export default App;
