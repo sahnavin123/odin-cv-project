@@ -35,15 +35,15 @@ class CVPreview extends Component {
               <div className="info">
                 <section className="address">
                   <p className="sub-heading">Address</p>
-                  <p>{address}</p>
+                  <p className="text">{address}</p>
                 </section>
                 <section className="phone-number">
                   <p className="sub-heading">Phone Number</p>
-                  <p>{phone}</p>
+                  <p className="text">{phone}</p>
                 </section>
-                <section>
+                <section className="email">
                   <p className="sub-heading">Email</p>
-                  <p>{email}</p>
+                  <p className="text">{email}</p>
                 </section>
               </div>
             </div>

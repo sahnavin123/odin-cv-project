@@ -21,16 +21,32 @@
 }
 
 .cv-preview .inner-container .profile-section {
+  max-width: 200px;
   padding-right: 1rem;
   grid-column: 2;
   grid-row: 1 / span 2;
   padding-left: 1rem;
 }
 
+.cv-preview .inner-container .profile-section .address,
+.phone-number {
+  width: 200px;
+}
+
+.cv-preview .inner-container .profile-section .email {
+  width: 200px;
+  word-wrap: break-word;
+}
+
 .cv-preview .inner-container .profile-section .sub-heading {
   font-weight: bolder;
   font-size: large;
   margin-bottom: -1rem;
+}
+
+.cv-preview .inner-container .profile-section .text {
+  font-size: 14px;
+  margin-top: 12px;
 }
 
 .edit-btn {
@@ -43,6 +59,7 @@
   display: flex;
   flex-direction: column;
   padding-left: 1rem;
+  word-wrap: break-word;
 }
 
 .cv-preview .inner-container .description-section .text {
@@ -64,6 +81,11 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+}
+
+.cv-preview .inner-container .details .education-name{
+  max-width: 370px;
+  word-wrap: break-word;
 }
 
 .inner-container .details .date {
@@ -94,6 +116,11 @@
 
 .cv-preview .inner-container .experience-section {
   padding-left: 1rem;
+}
+
+.cv-preview .inner-container .experience-section .job-desc{
+  max-width: 370px;
+  word-wrap: break-word;
 }
 
 .cv-preview .inner-container .experience-section .job-desc p:nth-child(1) {
