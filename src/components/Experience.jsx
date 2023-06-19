@@ -79,13 +79,13 @@ export default class Experience extends Component {
           },
         },
         () => {
-          this.props.onFormSubmit(
+          this.props.onFormSubmit({
             companyName,
             jobTitle,
             startDate,
             endDate,
-            jobDesc
-          );
+            jobDesc,
+          });
         }
       );
     }

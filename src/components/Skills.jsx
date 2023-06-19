@@ -23,7 +23,7 @@ export default class Skills extends Component {
       this.setState({ errorSkillTitle: errorTitle });
     } else {
       this.setState({ editing: false, errorSkillTitle: false }, () => {
-        this.props.onFormSubmit(skillTitle);
+        this.props.onFormSubmit({ skillTitle });
         this.setState({ skillTitle: "" });
       });
     }

@@ -69,7 +69,7 @@ export default class GeneralInfo extends Component {
           },
         },
         () => {
-          this.props.onFormSubmit(name, email, phone, address, description);
+          this.props.onFormSubmit({ name, email, phone, address, description });
         }
       );
     }

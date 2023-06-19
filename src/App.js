@@ -1,5 +1,4 @@
 import "./App.css";
-
 import React, { Component } from "react";
 import GeneralInfo from "./components/GeneralInfo";
 import Education from "./components/Education";
@@ -25,59 +24,54 @@ class App extends Component {
     };
   }
 
-  handleGeneralInfoSubmit = (name, email, phone, address, description) => {
+  handleGeneralInfoSubmit = ({ name, email, phone, address, description }) => {
+    const { generalInfo } = this.state;
     this.setState({
-      generalInfo: { name, email, phone, address, description },
+      generalInfo: {
+        ...generalInfo,
+        name,
+        email,
+        phone,
+        address,
+        description,
+      },
     });
   };
 
-  handleEducationSubmit = (school, course, startDate, endDate) => {
-    this.setState((prevState) => {
-      const updatedEducation = prevState.education.concat({
-        school,
-        course,
-        startDate,
-        endDate,
-      });
-      return {
-        education: updatedEducation,
-      };
-    });
+  handleEducationSubmit = ({ school, course, startDate, endDate }) => {
+    this.setState((prevState) => ({
+      education: [
+        ...prevState.education,
+        { school, course, startDate, endDate },
+      ],
+    }));
   };
 
-  handleSkillSubmit = (skillTitle) => {
-    this.setState((prevState) => {
-      const { skills } = prevState;
+  handleSkillSubmit = ({ skillTitle }) => {
+    this.setState(({ skills }) => {
       if (skills.includes(skillTitle)) {
-        return prevState;
+        return null;
       }
-      const updatedSkills = skills.concat(skillTitle);
+      const updatedSkills = [...skills, skillTitle];
       return {
         skills: updatedSkills,
       };
     });
   };
 
-  handleExperienceSubmit = (
+  handleExperienceSubmit = ({
     companyName,
     jobTitle,
     startDate,
     endDate,
-    jobDesc
-  ) => {
-    this.setState((prevState) => {
-      const updatedExperience = prevState.experience.concat({
-        companyName,
-        jobTitle,
-        startDate,
-        endDate,
-        jobDesc,
-      });
-
-      return {
-        experience: updatedExperience,
-      };
-    });
+    jobDesc,
+  }) => {
+    this.setState(({ experience }) => ({
+      experience: [
+        ...experience,
+        { companyName, jobTitle, startDate, endDate, jobDesc },
+      ],
+    }));
   };
 
   handleDeleteSkill = (index) => {

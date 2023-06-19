@@ -73,7 +73,7 @@ class Education extends Component {
           },
         },
         () => {
-          this.props.onFormSubmit(school, course, startDate, endDate);
+          this.props.onFormSubmit({ school, course, startDate, endDate });
         }
       );
     }
