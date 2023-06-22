@@ -55,28 +55,28 @@ class Education extends Component {
         !this.validateEndDate(startDate, endDate),
     };
 
-    if (Object.values(errors).some((error) => error === true)) {
-      this.setState({ errors });
-    } else {
-      this.setState(
-        {
-          school: "",
-          course: "",
-          startDate: "",
-          endDate: "",
-          editing: false,
-          errors: {
-            school: false,
-            course: false,
-            startDate: false,
-            endDate: false,
-          },
-        },
-        () => {
-          this.props.onFormSubmit({ school, course, startDate, endDate });
-        }
-      );
-    }
+    Object.values(errors).some((error) => error === true)
+      ? this.setState({ errors })
+      : (() => {
+          this.setState(
+            {
+              school: "",
+              course: "",
+              startDate: "",
+              endDate: "",
+              editing: false,
+              errors: {
+                school: false,
+                course: false,
+                startDate: false,
+                endDate: false,
+              },
+            },
+            () => {
+              this.props.onFormSubmit({ school, course, startDate, endDate });
+            }
+          );
+        })();
   };
 
   handleEdit = () => {

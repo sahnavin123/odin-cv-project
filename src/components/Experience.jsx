@@ -59,36 +59,36 @@ export default class Experience extends Component {
       jobDesc: jobDesc.trim() === "",
     };
 
-    if (Object.values(errors).some((error) => error === true)) {
-      this.setState({ errors });
-    } else {
-      this.setState(
-        {
-          companyName: "",
-          jobTitle: "",
-          startDate: "",
-          endDate: "",
-          jobDesc: "",
-          editing: false,
-          errors: {
-            companyName: false,
-            jobTitle: false,
-            startDate: false,
-            endDate: false,
-            jobDesc: false,
-          },
-        },
-        () => {
-          this.props.onFormSubmit({
-            companyName,
-            jobTitle,
-            startDate,
-            endDate,
-            jobDesc,
-          });
-        }
-      );
-    }
+    Object.values(errors).some((error) => error === true)
+      ? this.setState({ errors })
+      : (() => {
+          this.setState(
+            {
+              companyName: "",
+              jobTitle: "",
+              startDate: "",
+              endDate: "",
+              jobDesc: "",
+              editing: false,
+              errors: {
+                companyName: false,
+                jobTitle: false,
+                startDate: false,
+                endDate: false,
+                jobDesc: false,
+              },
+            },
+            () => {
+              this.props.onFormSubmit({
+                companyName,
+                jobTitle,
+                startDate,
+                endDate,
+                jobDesc,
+              });
+            }
+          );
+        })();
   };
 
   handleEdit = () => {

@@ -19,14 +19,14 @@ export default class Skills extends Component {
     const { skillTitle } = this.state;
     const errorTitle = skillTitle.trim() === "";
 
-    if (errorTitle === true) {
-      this.setState({ errorSkillTitle: errorTitle });
-    } else {
-      this.setState({ editing: false, errorSkillTitle: false }, () => {
-        this.props.onFormSubmit({ skillTitle });
-        this.setState({ skillTitle: "" });
-      });
-    }
+    errorTitle === true
+      ? this.setState({ errorSkillTitle: errorTitle })
+      : (() => {
+          this.setState({ editing: false, errorSkillTitle: false }, () => {
+            this.props.onFormSubmit({ skillTitle });
+            this.setState({ skillTitle: "" });
+          });
+        })();
   };
 
   handleEdit = () => {

@@ -54,25 +54,31 @@ export default class GeneralInfo extends Component {
       description: description.trim() === "",
     };
 
-    if (Object.values(errors).some((error) => error === true)) {
-      this.setState({ errors });
-    } else {
-      this.setState(
-        {
-          editing: false,
-          errors: {
-            name: false,
-            email: false,
-            phone: false,
-            address: false,
-            description: false,
-          },
-        },
-        () => {
-          this.props.onFormSubmit({ name, email, phone, address, description });
-        }
-      );
-    }
+    Object.values(errors).some((error) => error === true)
+      ? this.setState({ errors })
+      : (() => {
+          this.setState(
+            {
+              editing: false,
+              errors: {
+                name: false,
+                email: false,
+                phone: false,
+                address: false,
+                description: false,
+              },
+            },
+            () => {
+              this.props.onFormSubmit({
+                name,
+                email,
+                phone,
+                address,
+                description,
+              });
+            }
+          );
+        })();
   };
 
   handleEdit = () => {
