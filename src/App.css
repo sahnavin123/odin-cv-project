@@ -1,0 +1,21 @@
+.app {
+  padding-left: 1rem;
+  background-color: rgb(209, 207, 207);
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.app .cv-container {
+  display: flex;
+  gap: 6rem;
+}
+
+.app .cv-container .edit-section {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.app .cv-container .cv-section {
+  width: 40rem;
+}

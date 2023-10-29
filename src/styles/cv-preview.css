@@ -1,0 +1,163 @@
+.cv-preview {
+  background-color: white;
+  width: 210mm;
+  height: 250mm;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-bottom: 4rem;
+}
+
+.cv-preview .inner-container {
+  background-color: white;
+  display: grid;
+  grid-template-rows: 6rem 1fr 1fr;
+  grid-template-columns: 70% auto;
+}
+
+.cv-preview .header {
+  padding: 2rem;
+  background-color: rgb(20, 62, 114);
+  color: rgb(238, 238, 238);
+  height: 4rem;
+}
+
+.cv-preview .inner-container .profile-section {
+  max-width: 200px;
+  padding-right: 1rem;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  padding-left: 1rem;
+}
+
+.cv-preview .inner-container .profile-section .address,
+.phone-number {
+  width: 200px;
+}
+
+.cv-preview .inner-container .profile-section .email {
+  width: 200px;
+  word-wrap: break-word;
+}
+
+.cv-preview .inner-container .profile-section .sub-heading {
+  font-weight: bolder;
+  font-size: large;
+  margin-bottom: -1rem;
+}
+
+.cv-preview .inner-container .profile-section .text {
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.edit-btn {
+  cursor: pointer;
+  border-radius: 2rem;
+}
+
+.cv-preview .inner-container .description-section {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  word-wrap: break-word;
+}
+
+.cv-preview .inner-container .description-section .text {
+  font-style: italic;
+}
+
+.cv-preview .inner-container h4 {
+  margin-right: 0;
+  color: rgb(20, 62, 114);
+  border-bottom: 2px solid rgb(204, 204, 204);
+  margin-bottom: -0.5rem;
+}
+
+.cv-preview .inner-container .education-section {
+  padding-left: 1rem;
+}
+
+.cv-preview .inner-container .details {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.cv-preview .inner-container .details .education-name{
+  max-width: 370px;
+  word-wrap: break-word;
+}
+
+.inner-container .details .date {
+  font-style: italic;
+  font-size: small;
+}
+
+.inner-container .education-section .details .education-name p:nth-child(1) {
+  font-size: 1.2rem;
+}
+
+.inner-container .education-section .details .education-name p:nth-child(2) {
+  margin-top: -1rem;
+  font-style: italic;
+}
+
+.delete-btn {
+  background-color: red;
+  border: none;
+  border-radius: 2rem;
+  display: none;
+  transition: display 0.3s ease;
+}
+
+.details:hover .delete-btn {
+  display: inline-block;
+}
+
+.cv-preview .inner-container .experience-section {
+  padding-left: 1rem;
+}
+
+.cv-preview .inner-container .experience-section .job-desc{
+  max-width: 370px;
+  word-wrap: break-word;
+}
+
+.cv-preview .inner-container .experience-section .job-desc p:nth-child(1) {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.cv-preview .inner-container .experience-section .job-desc p:nth-child(2) {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-top: -0.8rem;
+  margin-bottom: -0.8rem;
+}
+
+.cv-preview .inner-container .skills-section {
+  padding-right: 1rem;
+  margin-top: 4rem;
+  grid-column: 2;
+  padding-left: 1rem;
+}
+
+.cv-preview .inner-container .skills-section .skill-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cv-preview .inner-container .skills-section .skill-card {
+  margin-top: 1rem;
+  margin-right: -0.8rem;
+  margin-bottom: -1.8rem;
+  background-color: rgb(20, 62, 114);
+  border-radius: 2rem;
+  width: fit-content;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: white;
+  display: flex;
+  gap: 1rem;
+}
